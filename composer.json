@@ -1,0 +1,22 @@
+{
+  "name": "sejator/posci4",
+  "type": "project",
+  "description": "Aplikasi sistem penjualan",
+  "license": "MIT",
+  "authors": [
+      {
+          "name": "Sejator Dev",
+          "email": "sejatordev@gmail.com"
+      }
+  ],
+  "require": {
+    "php": "^7.2 || ^8.0",
+    "codeigniter4/framework": "^4",
+    "phpoffice/phpspreadsheet": "^1.15",
+    "irsyadulibad/codeigniter4-datatables": "^2.0",
+    "mailjet/mailjet-apiv3-php": "^1.5"
+  },
+  "require-dev": {
+    "fakerphp/faker": "^1.9"
+  }
+}

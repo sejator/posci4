@@ -1,0 +1,55 @@
+#-------------------------
+# Operating Specific Junk Files
+#-------------------------
+
+# Linux
+*~
+
+# Linux trash folder which might appear on any partition or disk
+.Trash-*
+
+#-------------------------
+# Environment Files
+#-------------------------
+# These should never be under version control,
+# as it poses a security risk.
+.env
+
+#-------------------------
+# Temporary Files
+#-------------------------
+writable/cache/*
+!writable/cache/index.html
+
+writable/logs/*
+!writable/logs/index.html
+
+writable/session/*
+!writable/session/index.html
+
+writable/uploads/*
+!writable/uploads/index.html
+
+writable/debugbar/*
+
+php_errors.log
+
+#-------------------------
+# Composer
+#-------------------------
+vendor/
+
+# phpenv local config
+.php-version
+
+# Visual Studio Code
+.vscode/
+
+# Aplikasi
+!public/uploads/index.html
+public/uploads/profile/*
+!public/uploads/profile/index.html
+!public/uploads/profile/avatar.jpg
+public/uploads/produk/*
+!public/uploads/produk/index.html
+!public/uploads/produk/gambar.jpg
