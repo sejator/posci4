@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?= get_pengaturan('nama_toko'); ?> | Cetak Struk</title>
+    <title><?=get_pengaturan('nama_toko');?> | Cetak Struk</title>
     <style>
         html {
             font-family: "Verdana, Arial";
@@ -69,62 +69,62 @@
 <body onload="print()">
     <div class="container">
         <div class="title">
-            <h2><?= get_pengaturan('nama_toko'); ?></h2>
-            <p><?= get_pengaturan('alamat'); ?></p>
-            <p><?= get_pengaturan('no_telp'); ?></p>
+            <h2><?=get_pengaturan('nama_toko');?></h2>
+            <p><?=get_pengaturan('alamat');?></p>
+            <p><?=get_pengaturan('no_telp');?></p>
         </div>
         <div class="head">
             <table class="table">
                 <tr>
-                    <td class="kiri"><?= date("d F Y H:i", strtotime(esc($transaksi[0]['tanggal']))) ?></td>
+                    <td class="kiri"><?=date("d F Y H:i", strtotime(esc($transaksi[0]['tanggal'])))?></td>
                     <td class="kanan"> Kasir :</td>
-                    <td class="kanan"><?= esc($transaksi[0]['kasir']); ?></td>
+                    <td class="kanan"><?=esc($transaksi[0]['kasir']);?></td>
                 </tr>
                 <tr>
-                    <td class="kiri"><?= esc($transaksi[0]['invoice']); ?></td>
+                    <td class="kiri"><?=esc($transaksi[0]['invoice']);?></td>
                     <td class="kanan">Pelanggan :</td>
-                    <td class="kanan"><?= esc($transaksi[0]['pelanggan']); ?></td>
+                    <td class="kanan"><?=esc($transaksi[0]['pelanggan']);?></td>
                 </tr>
 
             </table>
         </div>
         <div class="transaksi">
             <table class="table">
-                <?php $diskon = 0; ?>
-                <?php foreach (esc($transaksi) as $data) : ?>
-                    <?php $diskon = esc($data['diskon']); ?>
+                <?php $diskon = 0;?>
+                <?php foreach (esc($transaksi) as $data): ?>
+                    <?php $diskon = esc($data['diskon']);?>
                     <tr>
-                        <td class="kiri"><?= esc($data['item']); ?></td>
-                        <td class="kanan"><?= esc($data['jumlah']); ?> x </td>
-                        <td class="kanan"><?= rupiah(esc($data['harga'])); ?></td>
-                        <?php if (esc($data['diskon_item']) != 0) : ?>
-                            <td class="kanan">Dis item <?= esc($data['diskon_item']); ?> %</td>
-                        <?php else : ?>
+                        <td class="kiri"><?=esc($data['item']);?></td>
+                        <td class="kanan"><?=esc($data['jumlah']);?> x </td>
+                        <td class="kanan"><?=rupiah(esc($data['harga']));?></td>
+                        <?php if (esc($data['diskon_item']) != 0): ?>
+                            <td class="kanan">Dis item <?=esc($data['diskon_item']);?> %</td>
+                        <?php else: ?>
                             <td class="kanan"></td>
-                        <?php endif; ?>
-                        <td class="kanan"><?= rupiah(esc($data['subtotal'])); ?></td>
+                        <?php endif;?>
+                        <td class="kanan"><?=rupiah(esc($data['subtotal']));?></td>
                     </tr>
-                <?php endforeach; ?>
+                <?php endforeach;?>
                 <tr>
                     <td colspan="5" style="border-bottom:1px solid; "></td>
                 </tr>
                 <tr>
                     <td colspan="4" class="kanan">Sub Total</td>
-                    <td class="kanan"><?= rupiah(esc($transaksi[0]['total_harga'])); ?></td>
+                    <td class="kanan"><?=rupiah(esc($transaksi[0]['total_harga']));?></td>
                 </tr>
                 <tr>
                     <td colspan="2"></td>
                     <td colspan="3" style="border-bottom: 1px dashed;"></td>
                 </tr>
-                <?php if (esc($diskon) != 0) : ?>
+                <?php if (esc($diskon) != 0): ?>
                     <tr>
                         <td colspan="4" class="kanan">Diskon Pembelian</td>
-                        <td class="kanan"><?= esc($diskon); ?> %</td>
+                        <td class="kanan"><?=esc($diskon);?> %</td>
                     </tr>
-                <?php endif; ?>
+                <?php endif;?>
                 <tr>
                     <td colspan="4" class="kanan">Total Akhir</td>
-                    <td class="kanan"><?= rupiah(esc($transaksi[0]['total_akhir'])); ?></td>
+                    <td class="kanan"><?=rupiah(esc($transaksi[0]['total_akhir']));?></td>
                 </tr>
                 <tr>
                     <td colspan="2"></td>
@@ -132,15 +132,15 @@
                 </tr>
                 <tr>
                     <td colspan="4" class="kanan">Tunai</td>
-                    <td class="kanan"><?= rupiah(esc($transaksi[0]['tunai'])); ?></td>
+                    <td class="kanan"><?=rupiah(esc($transaksi[0]['tunai']));?></td>
                 </tr>
                 <tr>
                     <td colspan="4" class="kanan">Kembalian</td>
-                    <td class="kanan"><?= rupiah(esc($transaksi[0]['kembalian'])); ?></td>
+                    <td class="kanan"><?=rupiah(esc($transaksi[0]['kembalian']));?></td>
                 </tr>
                 <tr>
                     <td colspan="4" class="kanan">Catatan</td>
-                    <td class="kanan"><?= esc($transaksi[0]['catatan']); ?></td>
+                    <td class="kanan"><?=esc($transaksi[0]['catatan']);?></td>
                 </tr>
             </table>
         </div>

@@ -1,5 +1,5 @@
-<?= $this->extend('layout/template'); ?>
-<?= $this->section('content'); ?>
+<?=$this->extend('layout/template');?>
+<?=$this->section('content');?>
 
 <div class="container-fluid">
     <button class="btn btn-primary mb-1" id="tambah"><i class="fas fa-plus"></i> Tambah Stok Keluar</button>
@@ -34,11 +34,11 @@
                 </button>
             </div>
             <div class="modal-body">
-                <?= form_open('', ['csrf_id' => 'token']); ?>
+                <?=form_open('', ['csrf_id' => 'token']);?>
                 <div class="form-group row">
                     <label class="col-sm-3 col-form-label" for="tanggal">Tanggal</label>
                     <div class="col-sm-9">
-                        <input type="date" class="form-control" id="tanggal" name="tanggal" value="<?= esc(date('Y-m-d')) ?>">
+                        <input type="date" class="form-control" id="tanggal" name="tanggal" value="<?=esc(date('Y-m-d'))?>">
                         <small class="invalid-feedback"></small>
                     </div>
                 </div>
@@ -72,9 +72,9 @@
                     <div class="col-sm-9">
                         <select class="form-control" name="pemasok" id="pemasok" disabled>
                             <option value="">- Pilih Pemasok -</option>
-                            <?php foreach (esc($pemasok) as $data) : ?>
-                                <option value="<?= esc($data->id) ?>"><?= esc($data->pemasok); ?></option>
-                            <?php endforeach; ?>
+                            <?php foreach (esc($pemasok) as $data): ?>
+                                <option value="<?=esc($data->id)?>"><?=esc($data->pemasok);?></option>
+                            <?php endforeach;?>
                         </select>
                         <small class="invalid-feedback"></small>
                     </div>
@@ -97,7 +97,7 @@
                     <button type="submit" id="simpan" class="btn btn-primary">Simpan</button>
                 </div>
                 <!-- /.card-body -->
-                <?= form_close(); ?>
+                <?=form_close();?>
             </div>
         </div>
     </div>
@@ -120,9 +120,9 @@
     </div>
 </div>
 
-<?= $this->endSection(); ?>
+<?=$this->endSection();?>
 
-<?= $this->section('js'); ?>
+<?=$this->section('js');?>
 <script>
     $(document).ready(function() {
         const table = $("#tabel-stok").DataTable({
@@ -271,7 +271,7 @@
                 cancelButtonText: 'Batal!'
             }).then(result => {
                 if (result.isConfirmed) {
-                    // ajax hapus data 
+                    // ajax hapus data
                     $.ajax({
                         url: `${BASE_URL}/transaksi/hapus`,
                         data: {
@@ -293,4 +293,4 @@
     })
 </script>
 
-<?php $this->endSection(); ?>
+<?php $this->endSection();?>
