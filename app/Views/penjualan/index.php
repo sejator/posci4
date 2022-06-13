@@ -1,5 +1,5 @@
-<?= $this->extend('layout/template'); ?>
-<?= $this->section('content'); ?>
+<?=$this->extend('layout/template');?>
+<?=$this->section('content');?>
 <style>
     div.dataTables_wrapper div.dataTables_length label {
         display: none !important;
@@ -13,22 +13,22 @@
                     <div class="form-group row d-none">
                         <label for="tanggal" class="col-sm-3 col-form-label">Tanggal</label>
                         <div class="col-sm-9">
-                            <input type="date" class="form-control" name="tanggal" id="tanggal" value="<?= date('Y-m-d') ?>">
+                            <input type="date" class="form-control" name="tanggal" id="tanggal" value="<?=date('Y-m-d')?>">
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="user" class="col-sm-3 col-form-label">Kasir</label>
                         <div class="col-sm-9">
-                            <input type="text" class="form-control" name="user" id="user" readonly value="<?= get_user('nama') ?>">
+                            <input type="text" class="form-control" name="user" id="user" readonly value="<?=get_user('nama')?>">
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="pelanggan" class="col-sm-3 col-form-label">Pelanggan</label>
                         <div class="col-sm-9">
                             <select name="pelanggan" id="pelanggan" class="form-control">
-                                <?php foreach (esc($pelanggan) as $data) : ?>
-                                    <option value="<?= esc($data->id) ?>"><?= esc($data->pelanggan); ?></option>
-                                <?php endforeach; ?>
+                                <?php foreach (esc($pelanggan) as $data): ?>
+                                    <option value="<?=esc($data->id)?>"><?=esc($data->pelanggan);?></option>
+                                <?php endforeach;?>
                             </select>
                         </div>
                     </div>
@@ -53,8 +53,11 @@
                     </div>
                     <div class="form-group row">
                         <label for="jumlah" class="col-sm-3 col-form-label">Jumlah</label>
-                        <div class="col-sm-9">
-                            <input type="number" class="form-control" name="jumlah" id="jumlah" autocomplete="off" disabled>
+                        <div class="col-sm-5">
+                            <input type="number" class="form-control" name="jumlah" id="jumlah" min="1" disabled>
+                        </div>
+                        <div class="col-sm-4">
+                            <button type="button" id="tambah" class="btn btn-primary" disabled>Tambah</button>
                         </div>
                     </div>
                 </div>
@@ -167,7 +170,7 @@
 <!-- modal edit item produk -->
 <div class="modal fade" id="modal-item-edit" aria-modal="true" data-backdrop="static" data-keyboard="false">
     <div class="modal-dialog">
-        <?= form_open('', ['csrf_id' => 'token']); ?>
+        <?=form_open('', ['csrf_id' => 'token']);?>
         <div class="modal-content">
             <div class="modal-header">
                 <h4 class="modal-title">Edit Item</h4>
@@ -218,16 +221,16 @@
             </div>
         </div>
         <!-- /.modal-content -->
-        <?= form_close(); ?>
+        <?=form_close();?>
     </div>
     <!-- /.modal-dialog -->
 </div>
-<?= $this->endSection(); ?>
+<?=$this->endSection();?>
 
-<?= $this->section('js'); ?>
-<script src="<?= base_url('js/penjualan.js') ?>"></script>
-<script src="<?= base_url('plugins/jquery-ui/jquery-ui.min.js') ?>"></script>
-<script src="<?= base_url('plugins/autoNumeric.min.js') ?>"></script>
+<?=$this->section('js');?>
+<script src="<?=base_url('js/penjualan.js')?>"></script>
+<script src="<?=base_url('plugins/jquery-ui/jquery-ui.min.js')?>"></script>
+<script src="<?=base_url('plugins/autoNumeric.min.js')?>"></script>
 <script>
     let auto_numeric = new AutoNumeric('#tunai', {
         decimalCharacter: ",",
@@ -235,4 +238,4 @@
         digitGroupSeparator: ".",
     });
 </script>
-<?= $this->endSection(); ?>
+<?=$this->endSection();?>
