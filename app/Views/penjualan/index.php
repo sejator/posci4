@@ -53,11 +53,11 @@
                     </div>
                     <div class="form-group row">
                         <label for="jumlah" class="col-sm-3 col-form-label">Jumlah</label>
-                        <div class="col-sm-5">
+                        <div class="col-sm-5 mb-2">
                             <input type="number" class="form-control" name="jumlah" id="jumlah" min="1" disabled>
                         </div>
                         <div class="col-sm-4">
-                            <button type="button" id="tambah" class="btn btn-primary" disabled>Tambah</button>
+                            <button type="button" id="tambah" class="btn btn-primary btn-block" disabled><i class="fas fa-shopping-cart"></i> Tambah</button>
                         </div>
                     </div>
                 </div>
