@@ -205,9 +205,7 @@
             $("#modal-detail").modal("show")
             $.ajax({
                 url: `${BASE_URL}/item/detail`,
-                type: "post",
                 data: {
-                    [$("#token").attr('name')]: $("#token").val(),
                     barcode: $(this).data('barcode')
                 },
                 success: function(response) {

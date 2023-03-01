@@ -35,6 +35,6 @@ class Pengaturan extends BaseController
             'no_telp'   => filter_var($post['no_telp'], FILTER_SANITIZE_SPECIAL_CHARS),
             'alamat'    => filter_var($post['alamat'], FILTER_SANITIZE_SPECIAL_CHARS),
         ];
-        $this->pengaturan->update(null, $data);
+        $this->pengaturan->update(1, $data);
     }
 }

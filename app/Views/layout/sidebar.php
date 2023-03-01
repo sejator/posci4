@@ -27,7 +27,7 @@
                     </a>
                 </li>
 
-                <?php if (esc(get_user('id_role') == 1)) : ?>
+                <?php if (esc(get_user('id_role') == 1) || esc(get_user('id_role') == 2)) : ?>
                     <li class="nav-item">
                         <a href="<?= base_url('pemasok') ?>" class="nav-link">
                             <i class="nav-icon fas fa-truck"></i>

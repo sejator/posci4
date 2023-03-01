@@ -4,10 +4,10 @@
   "description": "Aplikasi sistem penjualan",
   "license": "MIT",
   "authors": [
-      {
-          "name": "Sejator Dev",
-          "email": "sejatordev@gmail.com"
-      }
+    {
+      "name": "Sejator Dev",
+      "email": "sejatordev@gmail.com"
+    }
   ],
   "require": {
     "php": "^7.2 || ^8.0",
