@@ -46,7 +46,7 @@
                                 <input type="hidden" id="nama">
                                 <input type="hidden" id="harga">
                                 <input type="hidden" id="stok">
-                                <input type="text" class="form-control mr-2" id="barcode" name="barcode" placeholder="Input barcode" autofocus autocomplete="off">
+                                <input type="text" class="form-control mr-2" id="barcode" name="barcode" placeholder="Cari barcode / nama barang" autofocus autocomplete="off">
                                 <span class="text-muted" id="tampil-stok"></span>
                             </div>
                         </div>

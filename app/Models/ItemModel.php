@@ -30,9 +30,10 @@ class ItemModel extends Model
 
     public function barcodeModel($keyword)
     {
-        $builder = $this->builder($this->table);
-        $builder->select('barcode')->Like('barcode', $keyword);
-        return $builder->get()->getResultArray();
+        return $this->builder($this->table)->select('barcode, nama_item')
+        ->like('barcode', $keyword)
+        ->orLike('nama_item', $keyword)
+        ->get()->getResult();
     }
 
     public function cariProduk($keyword)

@@ -178,7 +178,10 @@ class Item extends BaseController {
         $data    = $this->itemModel->barcodeModel($keyword);
         $barcode = [];
         foreach ($data as $item) {
-            array_push($barcode, $item['barcode']);
+            array_push($barcode, [
+                'label' => "{$item->barcode} - {$item->nama_item}",
+                'value' => $item->barcode,
+            ]);
         }
 
         return $this->response->setJSON($barcode);
